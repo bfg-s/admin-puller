@@ -1,0 +1,35 @@
+{
+    "name": "bfg/admin-puller",
+    "description": "Long pull extension for bfg admin",
+    "type": "bfg-admin-extension",
+    "keywords": ["laravel", "bfg", "lte", "admin", "extension", "admin-puller"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Xsaven",
+            "email": "gms.sw.xsaven@gmail.com"
+        }
+    ],
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.0|^8.1",
+        "bfg/admin": "^5.3.8",
+        "bfg/puller": "^2.1.1"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Admin\\Extend\\AdminPuller\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Admin\\Extend\\AdminPuller\\ServiceProvider"
+            ]
+        }
+    }
+}
