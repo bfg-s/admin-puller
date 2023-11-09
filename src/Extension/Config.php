@@ -3,6 +3,7 @@
 namespace Admin\Extend\AdminPuller\Extension;
 
 use Admin\Core\ConfigExtensionProvider;
+use Admin\ExtendProvider;
 
 /**
  * Class Config
@@ -10,7 +11,13 @@ use Admin\Core\ConfigExtensionProvider;
  */
 class Config extends ConfigExtensionProvider {
 
-    protected $scripts = [
-        'vendor/puller/puller.js'
-    ];
+    /**
+     * @param  ExtendProvider  $provider
+     */
+    public function __construct(ExtendProvider $provider)
+    {
+        parent::__construct($provider);
+
+        $this->scripts[] = 'vendor/puller/puller.js';
+    }
 }
