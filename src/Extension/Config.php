@@ -12,12 +12,19 @@ use Admin\ExtendProvider;
 class Config extends ConfigExtensionProvider {
 
     /**
-     * @param  ExtendProvider  $provider
+     * @var array
      */
-    public function __construct(ExtendProvider $provider)
-    {
-        parent::__construct($provider);
+    protected array $scripts = [
+        'vendor/puller/puller.js'
+    ];
 
-        $this->scripts[] = 'vendor/puller/puller.js';
+    /**
+     * @return array
+     */
+    public function metas(): array
+    {
+        return [
+            '<meta name="puller-guard" content="admin">',
+        ];
     }
 }
